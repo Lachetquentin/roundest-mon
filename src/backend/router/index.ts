@@ -10,7 +10,7 @@ export const appRouter = trpc
     async resolve({ input }) {
       const api = new PokemonClient();
       const pokemon = await api.getPokemonById(input.id);
-      return pokemon;
+      return { name: pokemon.name, sprites: pokemon.sprites };
     },
   })
   .query("get-pokemon-by-name", {
@@ -18,7 +18,7 @@ export const appRouter = trpc
     async resolve({ input }) {
       const api = new PokemonClient();
       const pokemon = await api.getPokemonByName(input.name);
-      return pokemon;
+      return { name: pokemon.name, sprites: pokemon.sprites };
     },
   });
 
