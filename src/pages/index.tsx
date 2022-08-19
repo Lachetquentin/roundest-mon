@@ -13,7 +13,7 @@ export default function Home() {
   if (firstPokemon.isLoading || secondPokemon.isLoading) return null;
 
   const voteForRoundestPokemon = (selected: number) => {
-    trpc.mutate(["vote-for-pokemon", { id: first }]);
+    //trpc.mutate(["vote-for-pokemon", { id: first }]);
     updateIds(getOptionsForVote());
   };
 
